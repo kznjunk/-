@@ -3,40 +3,32 @@
 ## Overview
 
 [Introduction](##introduction)
-[History](#history)
-[Main elements for a 3D scene](#main-elements-for-a-3D-scene)
-[The scene](#the-scene)
-[The graphic engine](#the-graphic-engine)
-[The camera](#the-camera)
-[Lights](#lights)
-[Meshes (also objects)](#meshes-(also-objects))
-[A shader](#a-shader)
-[The loop render](#the-loop-render)
-
-
-[First lines of code](##First lines of code)
-[The heart](###The heart)
-[The player](###The player)
-[The map](###The map)
-
-
-[Meshes](##Meshes)
-[Ground](###Ground)
-[Cube](###Cube)
-[Sphere](###Sphere)
-[Cylinder](###Cylinder)
-
-
-[Lights](##Lights)
-[Hemispherical lights](###Hemispherical lights)
-[Directional lights](###Directional lights)
-[Ponctual lights](###Ponctual lights)
-[Spot](###Spot)
-
-
-[Camera](##Camera)
-[Free camera](###Free camera)
-[ArcRotate camera](###ArcRotate camera)
+- [History](#history)
+- [Main elements for a 3D scene](#main-elements-for-a-3D-scene)
+  - [The scene](#the-scene)
+  - [The graphic engine](#the-graphic-engine)
+  - [The camera](#the-camera)
+  - [Lights](#lights)
+  - [Meshes (also objects)](#meshes-(also-objects))
+  - [A shader](#a-shader)
+  - [The loop render](#the-loop-render)
+- [First lines of code](#first-lines-of-code)
+  - [The heart](#the-heart)
+  - [The player](#the-player)
+  - [The map](#the-map)
+- [Meshes](#meshes)
+  - [Ground](#ground)
+  - [Cube](#cube)
+  - [Sphere](#sphere)
+  - [Cylinder](#cylinder)
+- [Lights](#lights)
+  - [Hemispherical lights](#hemispherical-lights)
+  - [Directional lights](#directional-lights)
+  - [Ponctual lights](#ponctual-lights)
+  - [Spot](#spot)
+- [Camera](#camera)
+  - [Free camera](#free-camera)
+  - [ArcRotate camera](#arcrotate-camera)
 
 
 ## Introduction
