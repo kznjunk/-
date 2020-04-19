@@ -8,7 +8,7 @@
   - [The scene](#the-scene)
   - [The graphic engine](#the-graphic-engine)
   - [The camera](#the-camera)
-  - [Lights](#lights)
+  - [The lights](#the-lights)
   - [Meshes (also objects)](#meshes-(also-objects))
   - [A shader](#a-shader)
   - [The loop render](#the-loop-render)
@@ -60,7 +60,7 @@ It is not a physic engine - this one gonna calculate the trajectories and gravit
 
 This is all about checking what to look for!
 
-#### Lights
+#### The lights
 
 There is scene that contains a camera looking at a specific place with a graphic engine ready to receive the first calculations to do. Yet if we add an object, everything would be in the dark. Lights are there to enlight objects and create shadows.
 
