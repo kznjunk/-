@@ -3,15 +3,15 @@
 ## Overview
 
 [Introduction](##introduction)
-[History](###history)
-[Main elements for a 3D scene](###main-elements-for-a-3D-scene)
-[The scene](####the-scene)
-[The graphic engine](####the-graphic-engine)
-[The camera](####the-camera)
-[Lights](####lights)
-[Meshes (also objects)](####meshes-(also-objects))
-[A shader](####a-shader)
-[The loop render](####the-loop-render)
+[History](#history)
+[Main elements for a 3D scene](#main-elements-for-a-3D-scene)
+[The scene](#the-scene)
+[The graphic engine](#the-graphic-engine)
+[The camera](#the-camera)
+[Lights](#lights)
+[Meshes (also objects)](#meshes-(also-objects))
+[A shader](#a-shader)
+[The loop render](#the-loop-render)
 
 
 [First lines of code](##First lines of code)
