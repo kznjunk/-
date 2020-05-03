@@ -1,4 +1,6 @@
 # Cheat sheets
 
-1. [WebGL and BabylonJS](./webgl)
-1. [VueJS](./vuejs)
+1. [GraphQL](./graphql)
+2. [Sequelize](./sequelize)
+3. [VueJS](./vuejs)
+4. [WebGL and BabylonJS](./webgl)
