@@ -16,6 +16,16 @@
   - [Mutations](#mutations)
   - [Inline Fragments](#inline-fragments)
 - [Schemas and Types](#schemas-and-types)
+  - [Type System](#type-system)
+  - [Object Types and Fields](#object-types-and-fields)
+  - [Arguments](#arguments-b)
+  - [The Query and Mutation Types](#the-query-and-mutation-types)
+  - [FieScalar Typeslds](#scalar-types)
+  - [Enumeration Types](#enumeration-types)
+  - [Lists and Non-Null](#lists-and-non-null)
+  - [Interfaces](#interfaces)
+  - [Union Types](#union-types)
+  - [Input Types](#input-types)
 - [...](#...)
 
 ## Links
@@ -314,4 +324,56 @@ query HeroForEpisode($ep: Episode!) {
 
 ## Schemas and Types
 
-hmm
+### Type System
+
+```gql
+{
+  hero {
+    name
+    appearsIn
+  }
+}
+```
+
+Every GraphQL service defines a set of types which completely describe the set of possible data you can query on that service. Then, when queries come in, they are validated and executed against that schema.
+
+### Object Types and Fields
+
+The most basic components of a GraphQL schema are object types, which just represent a kind of object you can fetch from your service, and what fields it has. In the GraphQL schema language, we might represent it like this:
+
+```gql
+type Character {
+  name: String!
+  appearsIn: [Episode!]!
+}
+```
+
+- **Character** is a GraphQL Object Type, meaning it's a type with some fields. Most of the types in your schema will be object types
+- **name** and **appearsIn** are fields on the **Character** type. That means that **name** and **appearsIn** are the only fields that can appear in any part of a GraphQL query that operates on the **Character** type.
+- **String** is one of the built-in scalar types - these are types that resolve to a single scalar object, and can't have sub-selections in the query
+- **String!** means that the field is non-nullable, meaning that the GraphQL service promises to always give you a value when you query this field
+- **[Episode!]!** represents an array of Episode objects. Since it is also non-nullable, you can always expect an array (with zero or more items) when you query the appearsIn field. And since Episode! is also non-nullable, you can always expect every item of the array to be an Episode object
+
+### Arguments B
+
+
+### The Query and Mutation Types
+
+
+### Scalar Types
+
+
+### Enumeration Types
+
+
+### Lists and Non-Null
+
+
+### Interfaces
+
+
+### Union Types
+
+
+### Input Types
+
