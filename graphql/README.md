@@ -26,17 +26,8 @@
   - [Interfaces](#interfaces)
   - [Union Types](#union-types)
   - [Input Types](#input-types)
-- [Validation](#validation)
-- [Execution](#execution)
-- [Introspection](#introspection)
 - [Best practices](#introspection)
-  - [Introduction](#introspection-b)
-  - [Thinking in Graphs](#thinking-in-graphs)
-  - [Serving over HTTP](#serving-over-http)
-  - [Authorization](#authorization)
-  - [Pagination](#pagination)
-  - [Global Object Identification](#global-object-identification)
-  - [Caching](#caching)
+
 
 ## Links
 - https://graphql.org/
@@ -540,19 +531,6 @@ mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
 }
 ```
 
-## Validation
-
-## Execution
-
-## Introspection
-
 ## Best practices
 
-### Introduction B
-### Thinking in Graphs
-### Serving over HTTP
-### Authorization
-### Pagination
-### Global Object Identification
-### Caching
-
+Bwop
