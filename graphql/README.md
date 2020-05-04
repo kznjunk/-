@@ -26,7 +26,17 @@
   - [Interfaces](#interfaces)
   - [Union Types](#union-types)
   - [Input Types](#input-types)
-- [...](#...)
+- [Validation](#validation)
+- [Execution](#execution)
+- [Introspection](#introspection)
+- [Best practices](#introspection)
+  - [Introduction](#introspection-b)
+  - [Thinking in Graphs](#thinking-in-graphs)
+  - [Serving over HTTP](#serving-over-http)
+  - [Authorization](#authorization)
+  - [Pagination](#pagination)
+  - [Global Object Identification](#global-object-identification)
+  - [Caching](#caching)
 
 ## Links
 - https://graphql.org/
@@ -356,24 +366,193 @@ type Character {
 
 ### Arguments B
 
+Every field on a GraphQL object type can have zero or more arguments.
+All arguments are named. Unlike languages like JavaScript and Python where functions take a list of ordered arguments, all arguments in GraphQL are passed by name specifically.
+Arguments can be either required or optional. When an argument is optional, we can define a default value.
+
+```gql
+type Starship {
+  id: ID!
+  name: String!
+  length(unit: LengthUnit = METER): Float
+}
+```
 
 ### The Query and Mutation Types
 
+Most types in your schema will just be normal object types, but there are two types that are special within a schema:
+```gql
+schema {
+  query: Query
+  mutation: Mutation
+}
+```
+
+These types are the same as a regular object type, but they are special because they define the entry point of every GraphQL query.
+
+```gql
+query {
+  hero {
+    name
+  }
+  droid(id: "2000") {
+    name
+  }
+}
+```
+
+implies the following:
+
+```gql
+type Query {
+  hero(episode: Episode): Character
+  droid(id: ID!): Droid
+}
+```
 
 ### Scalar Types
 
+Fields that don't have any sub-fields will resolve to scalar types. They are the leaves of the query.
+The default scalar types are:
+- **Int**: a signed 32‐bit integer
+- **Float**: a signed double-precision floating-point value
+- **String**: a UTF‐8 character sequence
+- **Boolean**
+- **ID**: the ID scalar type represents a unique identifier, often used to refetch an object or as the key for a cache. The ID type is serialized in the same way as a String; however, defining it as an ID signifies that it is not intended to be human‐readable
+
+In most GraphQL service implementations, there is also a way to specify custom scalar types. For example, we could define a **Date** type:
+`scalar Date`
 
 ### Enumeration Types
 
+Also called Enums, enumeration types are a special kind of scalar that is restricted to a particular set of allowed values. This allows you to:
+- Validate that any arguments of this type are one of the allowed values
+- Communicate through the type system that a field will always be one of a finite set of values
+
+```gql
+enum Episode {
+  NEWHOPE
+  EMPIRE
+  JEDI
+}
+```
 
 ### Lists and Non-Null
 
+The Non-Null and List modifiers can be combined:
+
+```gql
+myField: [String!]
+```
+
+means
+
+```json
+myField: null // valid
+myField: [] // valid
+myField: ['a', 'b'] // valid
+myField: ['a', null, 'b'] // error
+```
+
+```gql
+myField: [String]!
+```
+
+means
+
+```json
+myField: null // error
+myField: [] // valid
+myField: ['a', 'b'] // valid
+myField: ['a', null, 'b'] // valid
+```
 
 ### Interfaces
 
+An Interface is an abstract type that includes a certain set of fields that a type must include to implement the interface.
+
+```gql
+interface Character {
+  id: ID!
+  name: String!
+  friends: [Character]
+  appearsIn: [Episode]!
+}
+
+type Human implements Character {
+  id: ID!
+  name: String!
+  friends: [Character]
+  appearsIn: [Episode]!
+  starships: [Starship]
+  totalCredits: Int
+}
+
+type Droid implements Character {
+  id: ID!
+  name: String!
+  friends: [Character]
+  appearsIn: [Episode]!
+  primaryFunction: String
+}
+```
 
 ### Union Types
 
+Union types are very similar to interfaces, but they don't get to specify any common fields between the types.
+
+```gql
+{
+  search(text: "an") {
+    __typename
+    ... on Character {
+      name
+    }
+    ... on Human {
+      height
+    }
+    ... on Droid {
+      primaryFunction
+    }
+    ... on Starship {
+      name
+      length
+    }
+  }
+}
+```
 
 ### Input Types
+
+You can also easily pass complex objects. This is particularly valuable in the case of mutations, where you might want to pass in a whole object to be created. In the GraphQL schema language, input types look exactly the same as regular object types, but with the keyword **input** instead of **type**:
+
+```gql
+input ReviewInput {
+  stars: Int!
+  commentary: String
+}
+
+mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
+  createReview(episode: $ep, review: $review) {
+    stars
+    commentary
+  }
+}
+```
+
+## Validation
+
+## Execution
+
+## Introspection
+
+## Best practices
+
+### Introduction B
+### Thinking in Graphs
+### Serving over HTTP
+### Authorization
+### Pagination
+### Global Object Identification
+### Caching
 
