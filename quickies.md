@@ -121,6 +121,11 @@ git commit -a -m "Bumped version number to 1.2"
 ### Strapi
 ----------
 
+```
+npm run build (to create the admin page)
+npm run develop
+```
+
 - Dev to production steps:
   - commit the local project (without database) to a git repository
   - dump configuration from local project config:dump
