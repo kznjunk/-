@@ -54,20 +54,19 @@ More at [aperiodic](http://aperiodic.net/screen/man:string_escapes) && [kilobits
 
 Add/replace entry Type A to target your server IP
 
-Domain | TTL | Type | Target
-example.com. | 0 | A | 1.1.1.1
-www.example.com. | 0 | A | 1.1.1.1
-```
+|Domain|TTL|Type|Target|
+|---|---|---|---|
+|example.com.|0|A|1.1.1.1|
+|www.example.com.|0|A|1.1.1.1|
 
 ### Subdomain
 -------------
 
 Create subdomains by adding new Type A and CNAME entries
-```
-Domain | TTL | Type | Target
-dev.example.com. | 0 | A | 1.1.1.1
-www.dev.example.com. | 0 | CNAME| dev.example.com.
-```
+|Domain|TTL|Type|Target|
+|---|---|---|---|
+|dev.example.com.|0|A|1.1.1.1|
+|www.dev.example.com.|0|CNAME|dev.example.com.|
 
 ### NGINX
 ---------
