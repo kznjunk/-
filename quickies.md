@@ -12,16 +12,28 @@
 ### Debian
 ----------
 
-- Get size folders:
-`du -h --max-depth=1 /path/to/directory`
+- Updates:
+```
+sudo apt update -y
+sudo apt upgrade -y
+```
 
-- Check disk spaces:
-`df -H`
+- Get size folders: `du -h --max-depth=1 /path/to/directory`
 
-- Change user password
-`sudo passwd username`
+- Check disk spaces: `df -H`
 
-- Change root password `sudo su -` and `passwd`
+- Change user password: `sudo passwd username`
+
+- Change root password: `sudo su -` and `passwd`
+
+- Enable/Disable root login over SSH
+```
+vim /etc/ssh/sshd_config
+
+PermitRootLogin yes
+
+service sshd restart
+```
 
 ### Vim
 -------
@@ -76,6 +88,9 @@ systemctl stop nginx
 systemctl restart nginx
 systemctl reload nginx
 ```
+
+- Get version: `sudo nginx -v`
+- Check the NGINX server is running: `curl -I 127.0.0.1`
 
 ### Certbot
 -----------
