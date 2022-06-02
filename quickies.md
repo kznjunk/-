@@ -91,6 +91,7 @@ systemctl reload nginx
 
 - Get version: `sudo nginx -v`
 - Check the NGINX server is running: `curl -I 127.0.0.1`
+- Create linked files available/enabled: `ln -s /etc/nginx/sites-available/hello_there.conf /etc/nginx/sites-enabled/`
 
 ### Certbot
 -----------
