@@ -5,6 +5,8 @@
 ----------
 
 - Blank page on `/admin`
+  - if first time, then `npm run build`
+  - verify NGINX config
   - Have a try with the IP instead of DNS
   - `ECONNRESET`: could be no more space on disk
 
