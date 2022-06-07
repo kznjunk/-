@@ -8,6 +8,7 @@
 - [VueJS](#vuejs)
 - [Github](#github)
 - [Strapi](#strapi)
+- [SQL](#sql)
 
 ### Debian
 ----------
@@ -150,3 +151,13 @@ npm run develop
   - setup from yarn
   - restore configuration config:restore
   - import data from the CSV files into the new project
+
+
+### SQL
+-------
+
+- `mysql -u root -p`
+- `SHOW DATABASES;`
+- `SELECT host, user, password FROM mysql.user;`
+- `FLUSH PRIVILEGES;`
+
