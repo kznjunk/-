@@ -160,4 +160,5 @@ npm run develop
 - `SHOW DATABASES;`
 - `SELECT host, user, password FROM mysql.user;`
 - `FLUSH PRIVILEGES;`
+- `$cfg['Servers'][$i]['AllowNoPassword'] = false;` && `$cfg['Servers'][$i]['AllowRoot'] = false;`
 
