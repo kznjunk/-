@@ -94,6 +94,25 @@ systemctl reload nginx
 - Check the NGINX server is running: `curl -I 127.0.0.1`
 - Create linked files available/enabled: `ln -s /etc/nginx/sites-available/hello_there.conf /etc/nginx/sites-enabled/`
 
+- Security by prompt
+```
+openssl passwd
+sudo vim /etc/nginx/site_pass -> login:encodedPassword
+
+location / {
+  auth_basic "Admin Login";
+  auth_basic_user_file /etc/nginx/site_pass;
+}
+```
+
+- Security by IP
+```
+satisfy all;
+allow 203.0.113.0;
+allow 127.0.0.1;
+deny all;
+```
+
 ### Certbot
 -----------
 
@@ -134,6 +153,14 @@ git checkout -b release-1.2 develop
 ./bump-version.sh 1.2
 git commit -a -m "Bumped version number to 1.2"
 ```
+
+- Merge into main
+```
+git checkout main
+git merge
+git push
+```
+
 
 ### Strapi
 ----------
