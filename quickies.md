@@ -188,4 +188,9 @@ npm run develop
 - `SELECT host, user, password FROM mysql.user;`
 - `FLUSH PRIVILEGES;`
 - `$cfg['Servers'][$i]['AllowNoPassword'] = false;` && `$cfg['Servers'][$i]['AllowRoot'] = false;`
-
+- `CREATE DATABASE example;`
+```
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON database_name.* TO 'user'@'localhost';
+FLUSH PRIVILEGES;
+```
