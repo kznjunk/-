@@ -157,7 +157,7 @@ git commit -a -m "Bumped version number to 1.2"
 - Merge into main
 ```
 git checkout main
-git merge
+git merge dev
 git push
 ```
 
