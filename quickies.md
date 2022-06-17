@@ -9,6 +9,7 @@
 - [Github](#github)
 - [Strapi](#strapi)
 - [SQL](#sql)
+- [PM2](#pm2)
 
 ### Debian
 ----------
@@ -194,3 +195,18 @@ CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON database_name.* TO 'user'@'localhost';
 FLUSH PRIVILEGES;
 ```
+
+
+
+### PM2
+-------
+
+- `pm2 ls`
+- `pm2 start bashscript.sh --name <app_name>`
+```
+$ pm2 restart app_name
+$ pm2 reload app_name
+$ pm2 stop app_name
+$ pm2 delete app_name
+```
+- ``
