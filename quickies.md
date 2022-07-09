@@ -162,6 +162,22 @@ git merge dev
 git push
 ```
 
+- Existing repo to existing folder:
+```
+git init
+git add .
+git commit -m "First commit"
+git remote add origin <remote repository URL>
+git remote -v
+
+git push origin main
+OR
+git branch -m <new_name>
+git push origin -u <new_name>
+OR 
+git push origin -u -f <new_name>
+```
+
 
 ### Strapi
 ----------
