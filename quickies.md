@@ -10,6 +10,7 @@
 - [Strapi](#strapi)
 - [SQL](#sql)
 - [PM2](#pm2)
+- [Wordpress](#wordpress)
 
 ### Debian
 ----------
@@ -226,3 +227,17 @@ $ pm2 stop app_name
 $ pm2 delete app_name
 ```
 - ``
+
+
+### Wordpress
+-------
+
+Clone website:
+- Use the duplicator plugin
+- Download both files
+- FTP transfer them to the wanted folder
+- Create a database with WP username/password
+- Might need to `sudo chown -R www-data:www-data /var/www`
+- Go to the url `/installer.php`
+
+
