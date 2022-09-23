@@ -3,6 +3,7 @@
 - [Screen](#screen)
 - [Domain](#domain)
 - [Subdomain](#subdomain)
+- [NativeScript](#nativescript)
 - [NGINX](#nginx)
 - [Certbot](#certbot)
 - [VueJS](#vuejs)
@@ -241,3 +242,55 @@ Clone website:
 - Go to the url `/installer.php`
 
 
+
+### NativeScript
+-------
+
+- CLI:
+```
+npm install -g nativescript
+
+ns create my_app
+ns preview
+
+ns clean
+
+ns run android
+ns run ios
+
+ns debug android
+ns debug ios
+
+ns doctor android
+ns doctor ios
+ns help
+
+// Android Debug Bridge
+adb devices
+ns device
+
+ns test init
+ns test ios
+ns test android
+ns test android --watch
+ns test ios --watch
+
+// update
+npm install -g nativescript
+// at the root 
+ns update
+
+ns platform remove android
+ns platform add android
+ns platform remove ios
+ns platform add ios
+
+npm install @nativescript/core@latest --save
+```
+
+- Magic variables:
+```
+if (__DEV__)
+if (global.isAndroid)
+if (global.isIOS)
+```
