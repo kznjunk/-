@@ -11,6 +11,7 @@
 - [Github](#github)
 - [Strapi](#strapi)
 - [SQL](#sql)
+- [Postgre SQL](#postgresql)
 - [PM2](#pm2)
 - [Wordpress](#wordpress)
 
@@ -123,6 +124,9 @@ deny all;
 
 ### VueJS
 ---------
+
+- update vuejs: `npm install vue@latest`
+
 ```
 git clone git@github.com:project.git
 npm i
@@ -230,6 +234,30 @@ $ pm2 delete app_name
 ```
 - ``
 
+Cluster Mode :
+
+pm2 start app.js -i max
+
+
+Ecosystem File :
+
+pm2 ecosystem
+to create a file
+
+pm2 start ecosystem.config.js
+pm2 start ecosystem.config.js --only "api-app,worker-app"
+pm2 stop ecosystem.config.js
+pm2 restart ecosystem.config.js
+pm2 reload ecosystem.config.js
+pm2 delete ecosystem.config.js
+
+aas opposed to restart, which kills and restarts the process, reload achieves a 0-second-downtime reload.
+```
+pm2 reload <app_name>
+pm2 reload process.json
+pm2 reload process.json --only api
+```
+
 
 ### Wordpress
 -------
@@ -302,7 +330,30 @@ if (global.isIOS)
 
 ```
 sudo knex migrate:rollback
+
+knex migrate:make create_users_table
+knex migrate:make create_planets_table
+
 npm run migrate
 npm run seed
 npm run start
+```
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "knex migrate:latest --knexfile src/db/knexfile.js",
+    "seed": "knex seed:run --knexfile src/db/knexfile.js"
+  },
+
+
+### Postgresql
+-------
+
+```
+sudo -u postgres psql
+\l
+\list or \l: list all databases
+\c <db name>: connect to a certain database
+\dt: list all tables in the current database using your search_path
+\dt *.: list all tables in the current database regardless your search_path
 ```
