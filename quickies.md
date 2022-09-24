@@ -3,6 +3,7 @@
 - [Screen](#screen)
 - [Domain](#domain)
 - [Subdomain](#subdomain)
+- [Knex](#knex)
 - [NativeScript](#nativescript)
 - [NGINX](#nginx)
 - [Certbot](#certbot)
@@ -293,4 +294,15 @@ npm install @nativescript/core@latest --save
 if (__DEV__)
 if (global.isAndroid)
 if (global.isIOS)
+```
+
+
+### Knex
+-------
+
+```
+sudo knex migrate:rollback
+npm run migrate
+npm run seed
+npm run start
 ```
