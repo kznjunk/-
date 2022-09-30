@@ -118,6 +118,8 @@ allow 127.0.0.1;
 deny all;
 ```
 
+- `tail -f /var/log/nginx/error.log`
+
 ### Certbot
 -----------
 
