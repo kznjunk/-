@@ -219,6 +219,7 @@ GRANT ALL PRIVILEGES ON database_name.* TO 'user'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
+- `sudo service mysql restart`
 
 
 ### PM2
