@@ -65,6 +65,8 @@ service sshd restart
 - `ctrl-a : source ~/.screenrc` - reset screen with a new config file 
 - `hardstatus string '%{gk} %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}- %{d}%l%{g} - %{= w}%D %d/%m/%Y %0c:%s%{g} %{W}'`
 
+- `ctrl + a, ESC, ` - scroll up/down
+
 More at [aperiodic](http://aperiodic.net/screen/man:string_escapes) && [kilobitspersecond](https://www.kilobitspersecond.com/2014/02/10/understanding-gnu-screens-hardstatus-strings/)
 
 ### Domain
